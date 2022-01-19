@@ -1,10 +1,6 @@
 import { useState,useEffect } from "react"
 
-const SearchPanel = ( {users} ) => {
-    const [param,setParam] = useState({
-        name:'',
-        personId:'',
-    })
+const SearchPanel = ( {users,param,setParam} ) => {
 
     useEffect( ()=>{
         console.log(users);

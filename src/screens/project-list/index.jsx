@@ -27,7 +27,9 @@ export default ()=>{
     useEffect(() => {
         fetch(`${api}/projects?${qs.stringify(cleanObject(param))}`).then( async res=>{
             if(res.ok){
-                setList( await res.json() )
+                let r = await res.json()
+                console.log(r);
+                setList( r )
             }
         } )
     }, [param])
