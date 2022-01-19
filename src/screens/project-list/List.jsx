@@ -1,6 +1,6 @@
 const List = ({list,users})=>{
     const getUserById = (personId)=>{
-        let person = users.find( item=>item.id == personId )?.name
+        let person = users.find( item=>item.id == personId )?.name || '未知'
         return person
     }
 
