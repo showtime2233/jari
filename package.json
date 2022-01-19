@@ -10,6 +10,7 @@
     "@types/node": "^16.11.17",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "qs": "^6.10.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
@@ -18,6 +19,7 @@
   },
   "scripts": {
     "dev": "react-scripts start",
+    "json": "json-server __json_server_mock__/db.json --watch --port 3001",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -39,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "json-server": "^0.17.0"
   }
 }
