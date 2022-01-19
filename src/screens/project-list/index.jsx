@@ -14,6 +14,9 @@ export default ()=>{
         personId:''
     })
 
+    const debounceParam = useDebounce( param , 2000 )
+    
+
     useEffect(() => {
         fetch(`${api}/users`).then( async res=>{
             if(res.ok){
@@ -25,14 +28,14 @@ export default ()=>{
     }, [])
 
     useEffect(() => {
-        fetch(`${api}/projects?${qs.stringify(cleanObject(param))}`).then( async res=>{
+        fetch(`${api}/projects?${qs.stringify(cleanObject(debounceParam))}`).then( async res=>{
             if(res.ok){
                 let r = await res.json()
                 console.log(r);
                 setList( r )
             }
         } )
-    }, [param])
+    }, [debounceParam])
 
     return <div>
         <SearchPanel users={users} param={param} setParam={setParam} />
